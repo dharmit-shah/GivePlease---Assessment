@@ -1,0 +1,19 @@
+.flex{display:flex}
+.flex-center{display:flex;align-items:center;justify-content:center}
+.flex-fill{display:flex;flex:1 1}
+.flex-vertical{display:flex;flex-direction:column}
+.flex-vertical-center{display:flex;align-items:center}
+.flex-between{display:flex;justify-content:space-between}
+.p-sm{padding:.5em}
+.pl-sm{padding-left:.5em}
+.pr-sm{padding-right:.5em}
+.pb-sm{padding-bottom:.5em}
+.p-md{padding:1em}
+.pb-md{padding-bottom:1em}
+.p-lg{padding:2em}
+.m-md{margin:1em}
+.size-lg{font-size:1.5em}
+.size-xl{font-size:2em}
+.half-width{width:50%}
+.pointer{cursor:pointer}
+.ellipsis{text-overflow:ellipsis;overflow:hidden}

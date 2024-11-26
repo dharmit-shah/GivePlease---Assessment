@@ -1,0 +1,163 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Gateway</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/fevicon.png">
+    
+    <!-- common files -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/bootstrap.min.js"></script>
+    
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="main-back payment_component">
+        <div class="container payment_container">
+            <div class="row payment_sec">
+                <div class="col-lg-8 col-md-12 payment_card">
+                    <!-- back btn -->
+                    <a href="./index.html" class="back_arrow" title="Back">
+                        <i class="ai-arrow-left"></i>
+                    </a>
+                    <!-- form -->
+                    <form>
+                        <div class="card-data flex-fill flex-vertical">
+                            <!-- Card Number -->
+                            <div class="flex-between flex-vertical-center">
+                                <div class="card-property-title">
+                                    <strong>Card Number</strong>
+                                    <span>Enter 16-digit card number on the card</span>
+                                </div>
+                            </div>
+
+                            <!-- Card Field -->
+                            <div class="flex-between">
+                                <div class="card-number flex-vertical-center flex-fill">
+                                    <div class="card-number-field flex-vertical-center flex-fill">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px"
+                                            height="24px">
+                                            <path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z" />
+                                            <path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z" />
+                                            <path fill="#ff3d00"
+                                                d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z" />
+                                        </svg>
+                                        <input type="text" placeholder="Card Number" class="form-control"
+                                            id="cardNumber" onkeypress="return onlyNumberKey(event)" maxlength="16"
+                                            name="cardNumber" data-bound="carddigits_mock"
+                                            data-def="0000 0000 0000 0000" />
+                                    </div>
+                                    <i class="ai-circle-check-fill size-lg f-main-color"></i>
+                                </div>
+                            </div>
+
+                            <!-- Expiry Date -->
+                            <div class="flex-between">
+                                <div class="card-property-title">
+                                    <strong>Expiry Date</strong>
+                                    <span>Enter the expiration date of the card</span>
+                                </div>
+                                <div class="card-property-value flex-vertical-center">
+                                    <div class="input-container half-width">
+                                        <input class="numbers month-own" data-def="00" type="number"
+                                            data-bound="mm_mock" placeholder="MM" max="99"
+                                            oninput="this.value = this.value.slice(0, 2);" />
+                                    </div>
+                                    <span class="m-md">/</span>
+                                    <div class="input-container half-width">
+                                        <input class="numbers year-own" data-def="0000" type="text" data-bound="yy_mock"
+                                            placeholder="YYYY" max="9999"
+                                            oninput="this.value = this.value.slice(0, 4);" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CCV Number -->
+                            <div class="flex-between">
+                                <div class="card-property-title">
+                                    <strong>CVC Number</strong>
+                                    <span>Enter card verification code from the back of the
+                                        card</span>
+                                </div>
+                                <div class="card-property-value">
+                                    <div class="input-container">
+                                        <input id="cvc" placeholder="Card CVV" maxlength="3"
+                                            onkeypress="return onlyNumberKey(event)" type="password" />
+                                        <i id="cvc_toggler" data-target="cvc" class="ai-eye-open pointer"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Name -->
+                            <div class="flex-between">
+                                <div class="card-property-title">
+                                    <strong>Cardholder Name</strong>
+                                    <span>Enter cardholder's name</span>
+                                </div>
+                                <div class="card-property-value">
+                                    <div class="input-container">
+                                        <input id="name" data-bound="name_mock" data-def="Mr. Cardholder" type="text"
+                                            placeholder="Cardholder Name" />
+                                        <i class="ai-person"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mobile No. -->
+                            <div class="flex-between">
+                                <div class="card-property-title">
+                                    <strong>Mobile No.</strong>
+                                    <span>Enter Mobile No.</span>
+                                </div>
+                                <div class="card-property-value">
+                                    <div class="input-container">
+                                        <input id="phone" type="text" placeholder="Your Mobile No." />
+                                        <i class="ai-phone"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- submit btn -->
+                        <div class="action flex-center Click-here">Submit</div>
+
+                        <!-- success popup -->
+                        <div class="custom-model-main">
+                            <div class="custom-model-inner">
+                                <div class="close-btn">x</div>
+                                <div class="custom-model-wrap">
+                                    <div class="pop-up-content-wrap">
+                                        <div class="check scaledown">✔</div>
+                                        <h2>Thank You</h2>
+                                        <p>Thank you for your prompt payment! We appreciate your business and look forward to serving you again.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-overlay"></div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/theme.js"></script>
+
+    <script>
+        // success popup
+        $(".Click-here").on('click', function () {
+            $(".custom-model-main").addClass('model-open');
+        });
+        $(".close-btn, .bg-overlay").click(function () {
+            $(".custom-model-main").removeClass('model-open');
+        });
+    </script>
+</body>
+
+</html>

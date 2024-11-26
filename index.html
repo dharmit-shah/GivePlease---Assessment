@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GivePlease - Assessment</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/fevicon.png">
+
+    <!-- common files -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="logo container">
+        <img src="./assets/img/logo.png" alt="Logo">
+    </div>
+    <section class="donation_component container" id="donationComponent">
+        <form class="container donation_card">
+            <div class="donation_heading">
+                <p>Select Donation Amount</p>
+            </div>
+            <div class="donation_amt_data">
+                <input type="radio" id="amt-ten" name="donation_amt" class="donation_amt" required />
+                <label for="amt-ten" title="$10">$10</label>
+                <input type="radio" id="amt-twenty" name="donation_amt" class="donation_amt" required />
+                <label for="amt-twenty" title="$20">$20</label>
+                <input type="radio" id="amt-thirty" name="donation_amt" class="donation_amt" required />
+                <label for="amt-thirty" title="$30">$30</label>
+                <input type="radio" id="amt-fourty" name="donation_amt" class="donation_amt" required />
+                <label for="amt-fourty" title="$40">$40</label>
+                <input type="radio" id="amt-fifty" name="donation_amt" class="donation_amt" required />
+                <label for="amt-fifty" title="$50">$50</label>
+                <input type="radio" id="amt-other" name="donation_amt" class="donation_amt" required />
+                <label for="amt-other" title="Other">Other</label>
+            </div>
+
+            <!-- Input field for "Other" amount -->
+            <div id="custom-amount" style="display: none;">
+                <label for="other-amount">$</label>
+                <input type="text" id="other-amount" placeholder="Enter your amount" />
+            </div>
+
+            <!-- Donation Type -->
+            <div class="donation_type">
+                <ul class="tabs">
+                    <li class="active-tab">Donate Online</li>
+                    <li>Donate Offline</li>
+                </ul>
+
+                <ul class="tabs-content">
+                    <!-- Donate Online -->
+                    <li class="text-center online_tab">
+                        <p class="payment_method_head">CHOOSE PAYMENT METHOD</p>
+                        <!-- CHOOSE PAYMENT METHOD -->
+                        <div class="select_online_method">
+                            <div class="select_method">
+                                <input type="radio" id="paypal" name="fav_language" value="paypal required">
+                                <label for="paypal">
+                                    <img src="./assets/img/paypal.png" alt="PayPal">
+                                </label>
+                            </div>
+                            <div class="select_method">
+                                <input type="radio" id="visa" name="fav_language" value="visa required">
+                                <label for="visa">
+                                    <img src="./assets/img/visa.png" alt="Visa">
+                                </label>
+                            </div>
+                            <div class="select_method">
+                                <input type="radio" id="masterCard" name="fav_language" value="masterCard required">
+                                <label for="masterCard">
+                                    <img src="./assets/img/master-card.png" alt="masterCard">
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- payment frequency -->
+                        <div class="donation_frequency">
+                            <select name="cars" id="cars" required>
+                                <option value="oneTime">One time</option>
+                                <option value="Quarterly">Quarterly</option>
+                                <option value="halfYearly">Half Yearly</option>
+                                <option value="yearly">Yearly</option>
+                            </select>
+                        </div>
+                        <!-- submit Button -->
+                        <div class="w-100">
+                            <a class="donate_btn" href="./payment.html" title="Donate Now">DONATE NOW</a>
+                        </div>
+                    </li>
+
+                    <!-- Donate Offline -->
+                    <li class="text-center offline_tab">
+                        <p><strong>Kindly Visit Our Below Mentioned Address:</strong></p>
+                        <div class="offline_address">
+                            <p>159, 9th Cross Sampige Road, Near Central Library, 
+                                Malleshwaram, Bangalore, Karnataka,
+                                560003, India</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </section>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script src="./assets/js/theme.js"></script>
+</body>
+
+</html>
